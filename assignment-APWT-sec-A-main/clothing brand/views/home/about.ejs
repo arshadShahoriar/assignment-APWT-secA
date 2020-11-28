@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About</title>
+</head>
+<body>
+	<h1> About</h1>
+
+	
+	<a href="/home">Back</a> | 
+	<a href="/logout">logout</a> 
+	<br>
+
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>Name</td>
+			<td>Email</td>
+			<td>Password</td>
+			<td>type</td>
+			<td>Status</td>
+			
+		</tr>
+		
+		<!-- <% for(var i=0; i < users.length; i++){ %>
+			
+			<tr>
+				<td><%= users[i][0] %></td>
+				<td><%= users[i][1] %></td>
+				<td><%= users[i][2] %></td>
+				<td><%= users[i][3] %></td>
+			</tr>
+
+		<% } %> -->
+
+		<% 
+			users.forEach( function(std){ %>
+			<tr>
+				<td><%= std.id %></td>
+				<td><%= std.username %></td>
+				<td><%= std.email %></td>
+				<td><%= std.password %></td>
+				<td><%= std.type %></td>
+				<td><%= std.status %></td>
+			
+				<td>
+					<!-- <a href="/Campaigns/edit/<%= std.id %>">Edit</a> | -->
+					<!-- <a href="/Campaigns/edit/<%= std.id %>/<%= std.target_fund %>/<%= std.raised_fund %>/<%= std.ctype %>/<%= std.description %>/<%= std.image %>/<%= std.publisedDate %>/<%= std.endDate %>/<%= std.status %>/<%= std.title %>">Edit</a> |
+					<a href="/Campaigns/delete/<%= std.id %>">Delete</a>
+					<a href="/Campaigns/report/<%= std.id %>">report</a>
+					<a href="/Campaigns/bookmarks/<%= std.id %>">bookmarks</a> -->
+
+				</td>
+			</tr>
+
+		<%
+			}); 
+		%>
+		
+	</table>
+
+</body>
+</html>

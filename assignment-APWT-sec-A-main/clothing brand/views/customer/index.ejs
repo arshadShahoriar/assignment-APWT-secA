@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>product list</title>
+</head>
+<body>
+	<h1> product list</h1>
+
+	 
+	<a href="/logout">logout</a> 
+	<br>
+	<form method="post"> 
+		<br>
+		<!-- Product Name :
+		<input type="text" name="productname"> <br> -->
+		Product Catagory :
+		<br>
+		<input type="radio"  name="catagory" value="male">
+  <label for="male">Male</label><br>
+  <input type="radio"  name="catagory" value="female">
+  <label for="female">Female</label><br>
+  <input type="submit" name="submit" value="search">
+</form>
+
+	<br>
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>Product Name</td>
+			<td>Description</td>
+			<td>Size chart</td>
+			<td>Price</td>
+			<td>Catagory</td>
+			<td>Model</td>
+			<td>Status</td>
+			<td>Image</td>
+		</tr>
+		
+		<!-- <% for(var i=0; i < users.length; i++){ %>
+			
+			<tr>
+				<td><%= users[i][0] %></td>
+				<td><%= users[i][1] %></td>
+				<td><%= users[i][2] %></td>
+				<td><%= users[i][3] %></td>
+			</tr>
+
+		<% } %> -->
+
+		<% 
+			users.forEach( function(std){ %>
+			<tr>
+				<td><%= std.id %></td>
+				<td><%= std.Pname %></td>
+				<td><%= std.description %></td>
+				<td><%= std.Schart %></td>
+				<td><%= std.price %></td>
+				<td><%= std.catagory %></td>
+				<td><%= std.model %></td>
+				<td><%= std.status %></td>
+				<td><%= std.image %></td>
+				
+				
+			
+				<td>
+					<!-- <a href="/Campaigns/edit/<%= std.id %>">Edit</a> | -->
+					<!-- <a href="/Campaigns/edit/<%= std.id %>/<%= std.target_fund %>/<%= std.raised_fund %>/<%= std.ctype %>/<%= std.description %>/<%= std.image %>/<%= std.publisedDate %>/<%= std.endDate %>/<%= std.status %>/<%= std.title %>">Edit</a> |
+					<a href="/Campaigns/delete/<%= std.id %>">Delete</a>
+					<a href="/Campaigns/report/<%= std.id %>">report</a>
+					 -->
+					 <a href="/customer/bookmarks/<%= std.id %>/<%= std.price %>">bookmarks</a>
+
+				</td>
+			</tr>
+
+		<%
+			}); 
+		%>
+		<a href="/customer">show all products</a> |
+		<a href="/customer/getbookmarked">all bookmarks</a> |
+		<a href="/customer/editprofile">Edit your profile</a>
+	</table>
+
+</body>
+</html>

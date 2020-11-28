@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+	<h1> purchase list</h1>
+
+	
+	<a href="/home">Back</a> | 
+	<a href="/logout">logout</a> 
+	<br>
+
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>Product ID</td>
+			<td>user id</td>
+			<td>price</td>
+			<td>date</td>
+
+
+
+			
+		</tr>
+		
+		<!-- <% for(var i=0; i < users.length; i++){ %>
+			
+			<tr>
+				<td><%= users[i][0] %></td>
+				<td><%= users[i][1] %></td>
+				<td><%= users[i][2] %></td>
+				<td><%= users[i][3] %></td>
+			</tr>
+
+		<% } %> -->
+
+		<% 
+			users.forEach( function(std){ %>
+			<tr>
+				<td><%= std.id %></td>
+				<td><%= std.pid %></td>
+				<td><%= std.uid %></td>
+				<td><%= std.price %></td>
+				<td><%= std.date %></td>
+				
+				
+				
+			
+				<td>
+					
+
+ 
+				</td>
+			</tr>
+
+		<%
+			}); 
+		%>
+		
+		total : <%= totalprice.total %>
+	</table>
+
+</body>
+</html>
