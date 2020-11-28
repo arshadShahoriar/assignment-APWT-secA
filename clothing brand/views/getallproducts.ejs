@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>product list</title>
+</head>
+<body>
+	<h1> product list</h1>
+
+	
+	<a href="/home">Back</a> | 
+	<a href="/logout">logout</a> 
+	<br>
+
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>Product Name</td>
+			<td>Description</td>
+			<td>Size chart</td>
+			<td>Price</td>
+			<td>Catagory</td>
+			<td>Model</td>
+			<td>Status</td>
+			<td>Image</td>
+			<td>Assign ID</td>
+		</tr>
+		
+		<!-- <% for(var i=0; i < users.length; i++){ %>
+			
+			<tr>
+				<td><%= users[i][0] %></td>
+				<td><%= users[i][1] %></td>
+				<td><%= users[i][2] %></td>
+				<td><%= users[i][3] %></td>
+			</tr>
+
+		<% } %> -->
+
+		<% 
+			users.forEach( function(std){ %>
+			<tr>
+				<td><%= std.id %></td>
+				<td><%= std.Pname %></td>
+				<td><%= std.description %></td>
+				<td><%= std.Schart %></td>
+				<td><%= std.price %></td>
+				<td><%= std.catagory %></td>
+				<td><%= std.model %></td>
+				<td><%= std.status %></td>
+				<td><%= std.image %></td>
+				<td><%= std.uid %></td>
+				
+				
+			
+				<td>
+					<!-- <a href="/Campaigns/edit/<%= std.id %>">Edit</a> | -->
+					<a href="/products/edit/<%= std.id %>/<%= std.Pname %>/<%= std.description %>/<%= std.Schart %>/<%= std.price %>/<%= std.catagory %>/<%= std.model %>/<%= std.status %>/<%= std.image %>/<%= std.uid %>">Edit</a> |
+					<a href="/products/delete/<%= std.id %>">Delete</a>
+					<!-- <a href="//report/<%= std.id %>">report</a>
+					<a href="/Campaigns/bookmarks/<%= std.id %>">bookmarks</a>
+ -->
+				</td>
+			</tr>
+
+		<%
+			}); 
+		%>
+		
+	</table>
+
+</body>
+</html>

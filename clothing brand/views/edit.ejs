@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit campaign</title>
+	<link rel="stylesheet" type="text/css" href="/abc/css/style.css">
+</head>
+<body>
+	
+
+<h1 style="green"> Edit products </h1>
+
+
+		<fieldset>
+			<legend>Edit products</legend>
+				<form  action="/owner/edit" method="post"  enctype="multipart/form-data">
+			<table>
+				<tr>
+					<td>Product id</td>
+					<td><input type="number" name="id" value="<%= id %>" readonly="true"></td>
+				</tr>
+				<tr>
+					<td>Product name</td>
+					<td><input type="text" name="Pname" value="<%= Pname %>"></td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td><input type="text" name="description" value="<%= description %>"></td>
+				</tr>
+				<tr>
+					<td>Size chart</td>
+					<td><input type="text" name="Schart" value="<%= Schart %>"></td>
+				</tr>
+				<tr>
+					<td>Price</td>
+					<td><input type="text" name="price" value="<%= price %>"></td>
+				</tr>
+				<tr>
+					<td>Catagory</td>
+					<td><input type="text" name="catagory" value="<%= catagory %>"></td>
+				</tr>
+				<tr>
+					<td>Model</td>
+					<td><input type="text" name="model" value="<%= model %>"></td>
+				</tr>
+				<tr>
+					<td>status</td>
+					<td><input type="text" name="status" value="<%= status %>"></td>
+				</tr>
+				<tr>
+					<td>Assign ID </td>
+					<td><input type="number" name="uid" value="<%= uid %>"></td>
+				</tr>
+
+				<tr>
+					<td>Image </td>
+					<td>  <input type="file" name="image"  ></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td><input type="submit" name="submit" value="Submit"></td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+
+<!-- 
+<a href="/home/userlist">User list</a>  -->
+	<!-- <a href="/user/create">Create User</a> | 
+	| 
+	<a href="/logout">logout</a -->
+
+</body> 
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<h1> product list</h1>
+
+	 
+	<a href="/logout">logout</a> 
+	<br>
+
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>Product ID</td>
+			<td>user id</td>
+			<td>price</td>
+			<td>date</td>
+
+
+			
+		</tr>
+		
+		<!-- <% for(var i=0; i < users.length; i++){ %>
+			
+			<tr>
+				<td><%= users[i][0] %></td>
+				<td><%= users[i][1] %></td>
+				<td><%= users[i][2] %></td>
+				<td><%= users[i][3] %></td>
+			</tr>
+
+		<% } %> -->
+
+		<% 
+			users.forEach( function(std){ %>
+			<tr>
+				<td><%= std.id %></td>
+				<td><%= std.pid %></td>
+				<td><%= std.uid %></td>
+				<td><%= std.price %></td>
+				<td><%= std.date %></td>
+				
+				
+				
+			
+				<td>
+					
+<a href="/bookmarks/delete/<%= std.id %>">Delete</a>
+ 
+				</td>
+			</tr>
+
+		<%
+			}); 
+		%>
+		
+	</table>
+<a href="/bookmarks/buyinfo">buy all products from the list</a>
+</body>
+</html>
